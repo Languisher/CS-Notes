@@ -1,0 +1,324 @@
+\chapter{Théorie des groupes} % (fold)
+\label{chap:Théorie des groupes}
+
+
+\section{Définitions et premières propriétés} % (fold)
+\label{sec:Définitions et premières propriétés}
+
+\subsection{Groupe} % (fold)
+\label{sub:Groupe}
+
+\begin{Definition}[colbacktitle=red!75!black]{Groupe}{}
+On dit que $(G, \times)$ est un \textbf{groupe} lorsque $G$ est un ensemble non vide et $\times$ une \textit{loi de composition interne} sur $G$ vérifiant : 
+\begin{itemize}
+
+    \item $\times$ \textit{associative} : 
+      \begin{equation}
+        \forall ( x, y, z) \in G ^{3}, \; (x \times y )\times z = x \times (y \times z) 
+      \end{equation} 
+    \item Existance d'un \textbf{élément neutre} $e \in G$ pour $\times$ : 
+      \begin{equation}
+        \forall x \in  G, \; e \times x = x \times e = x
+      \end{equation}
+
+    \item Tout élément de $G$ possède un inverse pour $\times$ : 
+      \begin{equation}
+        \forall x \in G, \exists y \in G,\; x \times y = y \times x = e
+      \end{equation}
+      on note $x ^{-1} \overset{Not}{=} y$ l'inverse de $x \in G$.
+
+\end{itemize}
+\end{Definition}
+
+\begin{Definition}[colbacktitle=red!75!black]{Abélien ou commutatif}{}
+$(G, \times)$ un groupe est \textbf{commutatif} ou \textbf{abélien} si $x$ est commutative : 
+\begin{equation}
+  \forall (x,y) \in G ^{2}, \; x \times y = y \times x
+\end{equation}
+\end{Definition}
+
+
+
+% subsection Groupe (end)
+\subsection{Groupe symétrique} % (fold)
+\label{sub:Groupe symétrique}
+
+% subsection Groupe symétrique (end)
+\begin{Definition}[colbacktitle=red!75!black]{}{}
+  \begin{itemize}
+
+      \item Soit $E$ un ensemble. On note $\mathscr{S}(E)$ l'ensemble des bijections de $E$ dans $E$ qu'on appelle l'ensemble des \textbf{permutations} de $E$.
+
+      \item $(\mathscr{S}(E), \circ)$ est appelé le \textbf{groupe symétrique} de $E$. 
+
+      \item Si $E = [\![1,n ]\!]$ où $n \in \mathbb{N} ^{*}$ alors on note simplement $\mathscr{S}_n$ le groupe symétrique de $[\![1,n]\!]$.  Son \textbf{ordre} est égal à $\mathrm{card}( \mathscr{S}_n) = n!$. 
+
+      \item Pour tout $\psi \in \mathscr{S}_n$, on note 
+\begin{equation}
+  \psi = \begin{pmatrix}
+    1 & 2 & \dots & n \\ 
+    \psi(1) & \psi(2) & \dots & \psi(n)
+  \end{pmatrix}
+\end{equation}
+
+  \end{itemize}
+\end{Definition}
+
+\begin{Example}{}{}
+  Pour $n=3$, il y a 6 permutations de $[\![1, 3]\!]$ : 
+  \begin{equation}
+    \mathrm{id} = \begin{pmatrix}
+      1 & 2 & 3 \\ 1 & 2 & 3
+    \end{pmatrix}, \quad \tau _{1,2} = \begin{pmatrix}
+      1 & 2 & 3 \\ 2 & 1 &3 
+    \end{pmatrix}, \quad \tau _{1,3} = \begin{pmatrix}
+      1 & 2 & 3 \\ 3 & 2 &1 
+    \end{pmatrix}
+  \end{equation}
+  \begin{equation}
+    \tau _{2, 3} = \begin{pmatrix}
+      1 & 2 & 3 \\ 1 & 3 & 2
+    \end{pmatrix}, \quad
+    \sigma_+ = \begin{pmatrix}
+      1 & 2 & 3 \\ 2 & 3 & 1
+    \end{pmatrix}, \quad \sigma_- = \begin{pmatrix}
+      1 & 2 & 3 \\ 3 & 2 & 1
+    \end{pmatrix}
+  \end{equation}
+\end{Example}
+
+
+
+\begin{Example}{}{}
+On peut calculer : 
+\begin{equation}
+\tau _{1,2} \circ \tau _{2,3} = \begin{pmatrix}
+  1 & 2 & 3 \\ 2 & 1 & 3
+\end{pmatrix} \circ \begin{pmatrix}
+  1 & 2 & 3 \\ 1 & 3 & 2
+\end{pmatrix} = \begin{pmatrix}
+  1 & 2 & 3 \\ 2 & 3 & 1
+\end{pmatrix} = \sigma_+
+\end{equation}
+\end{Example}
+
+
+\begin{Prop}{}{}
+Si $n \ge 3$, $(\mathscr{S}_n, \circ)$ n'est pas abélien.
+\end{Prop}
+
+\begin{myproof}{}{}
+  Soient $(a,b,c) \in [\![1,n ]\!] ^{3}$ trois éléments distincts. 
+
+  On considère des permutations $\varphi$ et $\psi$ de $[\![1,n]\!]$, telles que :
+  \begin{equation}
+    \begin{cases}
+        \varphi(a) = b \\ 
+        \varphi(b) = a \\ 
+        \varphi(c) = c
+    \end{cases}, \quad \begin{cases}
+      \psi(a) = c \\ 
+      \psi(b) = b \\ 
+      \psi(c) = a
+    \end{cases}
+  \end{equation} 
+
+  Alors, $(\varphi \circ \psi)(a) = \varphi(\psi(a)) = \varphi(c) = c$ et $(\psi \circ \varphi)(a) = \psi(\varphi(a)) = \psi(b) = b \ne c$ 
+
+  Donc $\varphi \circ \psi \ne \psi \circ \varphi$, donc $\mathscr{S}_n$ n'est pas abélien.
+\end{myproof}
+
+
+
+\begin{Example}{}{}
+Dans $(\mathscr{S}_3, \circ)$, on remarque que 
+\begin{equation}
+  \sigma_+ \circ \tau _{1,2} = \tau _{1,3}, \quad \tau _{1,2} \circ \sigma_+ = \tau _{2,3} \ne \tau _{1,3}
+\end{equation}
+\end{Example}
+
+\textbf{Remarque} : 
+\begin{itemize}
+
+    \item De même $\mathscr{S}(E)$ n'est pas abélien lorsque $E$ est un ensemble infini. 
+
+    \item Le sous-ensemble $\{ \mathrm{id}, \sigma_+ , \sigma_- \}$ a aussi une structure de groupe pour la composition $\circ$ ($\{ \mathrm{id}, \sigma_+, \sigma_-$ est un groupe abélien fini d'ordre 3). Par contre $\{\mathrm{id}, \tau _{1,2}, \tau _{2,3}, \tau _{1,3}\}$ n'a pas de structure de groupe.
+
+        Par exemple, $\tau _{1,2} \circ \tau _{2,3} = \sigma_+$ donc $\circ$ n'est pas un loi de composition interne.
+\end{itemize}
+
+
+\subsection{Sous-groupes} % (fold)
+\label{sub:Sous-groupes}
+
+\begin{Definition}[colbacktitle=red!75!black]{Sous-groupe}{}
+Soit $(G, {*})$ un groupe et $H \subset G$, alors on dit que $H$ est un \textbf{sous-groupe} de $(G, *)$ lorsque 
+\begin{itemize}
+
+  \item $e \in H$ 
+  \item \textit{Stabilité par la loi de composition interne} : 
+    \begin{equation}
+      \label{eq:1}
+      \forall (x, y) \in H, \quad x * y \in H 
+    \end{equation}
+
+  \item \textit{Stabilité par passage au symétrie} : 
+    \begin{equation}
+      \label{eq:2}
+      \forall x \in H, \; \bar{x} \in H
+    \end{equation}
+
+\end{itemize}
+\end{Definition}
+
+\begin{Prop}{}{}
+$H$ est un sous-groupe de $(G,*)$ si et seulement si 
+\begin{itemize}
+
+    \item $e \in H$ 
+    \item $\forall (x, y) \in H$, $x * \bar{y} \in H$
+
+\end{itemize}
+\end{Prop}
+
+\begin{myproof}{}{}
+\begin{itemize}
+
+    \item $(\implies)$ Simple. 
+    \item $(\impliedby)$ Soit $x \in H$, alors $\bar{x} = e * \bar{x} \in H$ car $(e,x) \in H ^{2}$, donc \ref{eq:2} est vérifié.
+      Soit $(x,y) \in H ^{2}$, alors $x * y = x * \bar{\bar{y}} \in H$ car $(x, \bar{y}) \in H ^{2}$, donc \ref{eq:1} est vérifié.
+
+\end{itemize}
+\end{myproof}
+
+\begin{Example}{}{}
+\begin{itemize}
+
+    \item $\mathbb{Z}$ est un sous-groupe de $(\mathbb{Q}, +)$, de $(\mathbb{R}, + )$ et aussi de $(\mathbb{C}, +)$. C'est parce que $\mathbb{Q}$ est un sous-groupe de $(\mathbb{R},+)$ et $\mathbb{R}$ est un sous-groupe de $(\mathbb{C}, +)$. 
+
+    \item Pour tout $n \in \mathbb{N}$, $n \mathbb{Z} = \{ nk, \; k \in \mathbb{Z} \}$ est un sous-groupe de $(\mathbb{Z}, +)$ 
+
+      En particulier, l'ensemble $2 \mathbb{Z}$ des entiers pairs est un sous-groupe de $(\mathbb{Z}, +)$. 
+
+      Mais, l'ensemble $\{2k+1, \; k \in \mathbb{Z}\}$ des entiers impairs n'est pas un sous-groupe de $(\mathbb{Z}, +)$ (car il ne contient pas 0 et il n'est pas stable par addition) 
+
+    \item L'ensemble des fonctions réelles continues sur $I \subset \mathbb{R}$ est un \underline{sous-groupe additif} de l'ensemble ds fonctions réelle définies sur $I$ (car une somme de fonctions continues est continue)
+
+      De même l'ensemble des fonctions dérivables sur $I$ est bien un sous-groupe additif.
+
+      Mais, l'ensemble des fonctions positives sur $I$ n'est pas un sous-groupe additif car il n'est pas stable par passage à l'opposé.
+
+    \item Le sous-ensemble des suites réelles croissantes n'est pas un sous-groupe additif de l'ensemble des suites réelles.
+
+      Mais, le sous-ensemble des suites réelles nulles à partir d'un certain rang est bien un sous-groupe additif.
+
+\end{itemize}
+\end{Example}
+
+\begin{Example}{}{}
+\begin{itemize}
+
+  \item Pour tout $n \in \mathbb{N} ^{*}$, $\mathbb{U}_n = \{z \in \mathbb{C}, \; z ^{n} = 1\}$ est un sous-groupe de $(\mathbb{U} = \{z \in \mathbb{C}, |z| = 1\}, \times)$. Ces deux groupes sont des sous-groupes de $(\mathbb{C} ^{*}, \times)$. 
+
+      De même $\mathbb{R} ^{*}$ et $]0, +\infty[$ sont des \textbf{sous-groupes multiplicatifs} de $\mathbb{C} ^{*}$.
+
+      Mais, $i \mathbb{R} = \{ iy, \; y \in \mathbb{R}\}$ n'est pas un sous-groupe multiplicatif de $\mathbb{C} ^{*}$ (car $1 \not\in i \mathbb{R}$) 
+
+    \item $\{\mathrm{id}, \sigma_+, \sigma_-\}$ est un sous-groupe de $(\mathscr{S}_3, \circ)$
+
+    \item Soit $E$ un ensemble et $A \subset E$. On note $H = \{ \varphi \in \mathscr{S}(E), \; \varphi(A) \subset A \}$ l'ensemble des permutations de $E$ qui laissent $A$ \underline{stable}, alors $H$ est un sous-groupe de groupe symétrique $\mathscr{S}(E)$, en effet : 
+      \begin{itemize}
+
+          \item $\mathrm{id} \in H$  car $\mathrm{id}(A) = A$ 
+          
+          \item Si $\varphi \in H$ alros $\varphi$ est une bijection qui envoie $\varphi(A)$ dans $A$ 
+
+          \item Or $A \subset E$ est un ensemble fini donc $\mathrm{card}(\varphi(A)) = \mathrm{card}(A)$. 
+
+          \item Donc, $\varphi(A) =A$, $\varphi ^{0-1} (A) =A$, donc $H$ est stable par passage à symétrique. (la bijection réciproque de $\varphi$ = le symétrique de $\varphi$ par $0$)
+
+          \item La stabilité de $H$ par composition est immédiate.
+
+      \end{itemize}
+
+\end{itemize}
+
+\end{Example}
+
+
+\textbf{Remarque} : Soit $(G, *)$ un groupe. Alors le plus petit sous-groupe est $\{e\}$ et le plus grand sous-groupe est $G$. Ces deux sous-groupes sont appelés les sous-groupes \textbf{triviaux} de $G$.
+
+
+\begin{Prop}{}{}
+Toute intersection de sous-groupes de $(G, *)$ est un sous-groupe de $(G, *)$. 
+
+C'est en général faux pour l'union. 
+\end{Prop}
+
+\begin{myproof}{Intersection}{}
+Soit $(H_i) _{i \in I}$ des sous-groupes de $(G, *)$, on pose $H = \bigcap _{i \in I} H _i$, alors $\forall i \in I$, $e \in H_i$ car $H_i$ est un sous-groupe donc $e\in H$.
+
+Si $(x,y) \in H ^{2}$, alors $\forall i \in I$, $(x,y) \in H_i ^{2}$ donc $x * \bar{y} \in H_i$ car $H_i$ est un sous-groupe donc $x * \bar{y} \in H$. 
+
+Par conséquent, $H$ est bien un sous-groupe.
+\end{myproof}
+
+\begin{Example}{}{}
+Dans $(\mathbb{Z},+)$, $2 \mathbb{Z} \cap 3 \mathbb{Z} = 6 \mathbb{Z}$ sont les sous-groupes.
+
+Par exemple $2 \mathbb{Z} \cup 3 \mathbb{Z}$ n'est pas un sous-groupe de $(\mathbb{Z}, +)$ car $5 \not \in 2 \mathbb{Z} \cup 3 \mathbb{Z}$
+\end{Example}
+
+\begin{Definition}[colbacktitle=red!75!black]{}{}
+Soit $(G, *)$ un groupe et $A \subset G$ alors l'intersection de tous les sous-groupes de $(G, *)$ qui contiennant $A$ est appelées le \textbf{sous-groupe engendrée} par $A$, on le note : 
+\begin{equation}
+  \langle A \rangle = \bigcap _{H \text{ sous-groupe de }(G,*), \; A \subset H} H
+\end{equation}
+\end{Definition}
+
+\begin{Prop}{}{}
+$\langle A \rangle$ est le plus petit sous-groupe qui contient $A$. 
+\end{Prop}
+
+\begin{myproof}{}{}
+\begin{itemize}
+
+    \item $\langle A \rangle$ est bien un sous-groupe comme intersection de sous-groupes. 
+    \item Il est immédiat que $A \subset \langle A \rangle$
+    \item Si $B$ est un sous-groupe qui contient $A$, alors $\langle A \rangle \subset H$ par définition.
+
+\end{itemize}
+\end{myproof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% subsection Sous-groupes (end)
+
+
+
+
+
+
+
+
+
+
+
+
+% section Définitions et premières propriétés (end)
+% chapter Théorie des groupes (end)

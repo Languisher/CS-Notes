@@ -1,0 +1,13 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/linnan/Desktop/CS-Notes/C-Programming/Programs/Lec05/sort'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _check, symObjAddr: 0x0, symBinAddr: 0x100003850, symSize: 0x80 }
+  - { offsetInCU: 0x4F, offset: 0x4F, size: 0x8, addend: 0x0, symName: _check, symObjAddr: 0x0, symBinAddr: 0x100003850, symSize: 0x80 }
+  - { offsetInCU: 0x9D, offset: 0x9D, size: 0x8, addend: 0x0, symName: _randnum, symObjAddr: 0x80, symBinAddr: 0x1000038D0, symSize: 0x70 }
+  - { offsetInCU: 0xF9, offset: 0xF9, size: 0x8, addend: 0x0, symName: _ivec_print_p1, symObjAddr: 0xF0, symBinAddr: 0x100003940, symSize: 0x70 }
+  - { offsetInCU: 0x139, offset: 0x139, size: 0x8, addend: 0x0, symName: _swap, symObjAddr: 0x160, symBinAddr: 0x1000039B0, symSize: 0x30 }
+  - { offsetInCU: 0x179, offset: 0x179, size: 0x8, addend: 0x0, symName: _merge_sort_recursive, symObjAddr: 0x190, symBinAddr: 0x1000039E0, symSize: 0x1F0 }
+  - { offsetInCU: 0x229, offset: 0x229, size: 0x8, addend: 0x0, symName: _merge_sort, symObjAddr: 0x380, symBinAddr: 0x100003BD0, symSize: 0x90 }
+  - { offsetInCU: 0x276, offset: 0x276, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x410, symBinAddr: 0x100003C60, symSize: 0x2AA }
+...

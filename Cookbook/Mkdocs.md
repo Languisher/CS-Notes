@@ -9,6 +9,7 @@ pip install https://github.com/mitya57/python-markdown-math/archive/master.zip`
 ```
 
 ## Create, Server and Publishment
+
 - Create a projet: `mkdocs new [filename]`
 
 - Render to a site: `mkdocs serve`
@@ -98,4 +99,3 @@ Explications:
 - ![Basic Tutorial](https://www.mkdocs.org/user-guide/)
 - ![Material Tutorial](https://www.youtube.com/watch?v=Q-YA_dA8C20)
 - ![Problems with Mathjax](https://stackoverflow.com/questions/27882261/mkdocs-and-mathjax)
-  
