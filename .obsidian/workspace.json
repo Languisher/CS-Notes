@@ -8,11 +8,13 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3ccd034c28019fac",
+            "id": "9bfa82d18132ad7c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "pdf",
+              "state": {
+                "file": "I01 IA(???????????????)/Livres/MATH2309P_V5.3_ecran.pdf"
+              }
             }
           }
         ]
@@ -65,7 +67,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 236.5
   },
   "right": {
     "id": "dbb3fdc245c3dc9f",
@@ -81,6 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "I01 IA(???????????????)/Livres/MATH2309P_V5.3_ecran.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "I01 IA(???????????????)/Livres/MATH2309P_V5.3_ecran.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +122,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "I01 IA(???????????????)/Livres/MATH2309P_V5.3_ecran.pdf"
+              }
             }
           },
           {
@@ -150,30 +156,44 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "3ccd034c28019fac",
+  "active": "d31fcb4c70e93b65",
   "lastOpenFiles": [
+    "I01 IA(???????????????)/Notes/02 Le Fitting.md",
+    "I01 IA(???????????????)/Notes/03 La Réduction de dimension.md",
+    "Graphe/Poly/chapitre2.pdf",
+    "Graphe/Notes/C1/Graphe C2-4.pdf",
+    "Graphe/Notes/C1/Chapitre 1 - Goodnotes.md",
+    "C-Programming/References/Pointers on C 1st Edition.pdf",
+    "Graphe/Notes/02 Spanning Trees.md",
+    "Graphe/Notes/01 Graphs.md",
+    "C-Programming/Notes/【C-8】数组.md",
+    "Graphe/Notes/C2",
+    "Graphe/Notes/C1",
+    "Graphe/graphe-poly.pdf",
+    "C-Programming/Notes/【C-10】结构和联合.md",
+    "C-Programming/Notes/Basic concepts/Statements.md",
+    "C-Programming/Notes/【C-1】Data.md",
+    "C-Programming/Notes/Strings, Characters and Bytes.md",
+    "C-Programming/Notes/Basic concepts/Memory and Addresses.md",
+    "C-Programming/Notes/assets/Bits and Bytes.png",
+    "C-Programming/Notes/assets/截屏2023-11-19 16.22.36.png",
+    "C-Programming/Notes/assets/截屏2023-11-16 11.19.46.png",
+    "C-Programming/Notes/Basic concepts/Basic Concepts.md",
+    "C-Programming/Notes/【C-6】指针.md",
+    "C-Programming/Notes/【C-7】函数.md",
+    "C-Programming/Notes/Basic concepts/L-value and R-value.md",
+    "Test/C/test",
+    "Test/C/test.c",
+    "Test/C",
+    "Test/Latex-Template/build/main.xdv",
+    "C-Programming/Notes/Notes.md",
+    "C-Programming/References/References.md",
     "C-Programming/Programs/Lec04/实验报告：strcpy.md",
-    "C-Programming/Programs/Lec04/lab03_521261910008/实验报告：strcpy.pdf",
-    "C-Programming/Programs/Lec04/lab03_521261910008/lab03_林楠_521261910008.pdf",
-    "C-Programming/Programs/Lec04/lab03_521261910008.zip",
-    "C-Programming/Programs/Lec04/lab03_521261910008/build/obj/strcpy.o",
-    "C-Programming/Programs/Lec04/lab03_521261910008/build/obj/strcpy-7f1a3d1e.o.tmp",
-    "C-Programming/Programs/Lec04/lab03_521261910008/build/obj",
-    "C-Programming/Programs/Lec04/lab03_521261910008/build",
-    "C-Programming/Programs/Lec03/lab02_521261910008 2",
-    "C-Programming/Programs/Lec03/lab02_521261910008/实验报告：strcpy.pdf",
     "C-Programming/Programs/Lec04/assets/截屏2023-11-06 22.32.26.png",
-    "C-Programming/Programs/Lec04/assets",
     "C-Programming/Programs/Lec03/实验报告：找回文字符串——Manacher's Algorithm.md",
     "C-Programming/Programs/Lec03/assets/Drawing 2023-10-22 20.18.02.excalidraw.md",
     "C-Programming/Programs/Lec01/实验报告/实验报告（Josephus 问题）.md",
-    "C-Programming/Notes/Pointers.md",
-    "C-Programming/Notes/Memory and Addresses.md",
-    "C-Programming/Notes/Notes.md",
-    "C-Programming/Notes/L-value and R-value.md",
-    "C-Programming/Notes/Functions.md",
     "C-Programming/C-Programming.md",
-    "Graphe/Notes/02 Spanning Trees.md",
     "Graphe/Codes/TP5/numerotation.png",
     "Graphe/Codes/TP5/exemple.png",
     "Graphe/Codes/未命名.md",
@@ -182,21 +202,8 @@
     "C-Programming/Programs/Lec03/assets/Pasted image 20231016165245.png",
     "C-Programming/Programs/Lec03/assets/截屏2023-10-16 15.19.45.png",
     "README.md",
-    "C-Programming/Notes/Arrays.md",
     "Graphe/Codes/Python-Networkx.md",
     "Graphe/Notes/assets/截屏2023-10-08 10.41.45.png",
-    "Graphe/Notes/assets/截屏2023-10-08 10.41.34.png",
-    "Graphe/Notes-Latex/assets/Breadth-First Search Algorithm Ex5.png",
-    "Graphe/Notes-Latex/assets/截屏2023-10-07 00.14.21.png",
-    "Lab/a.md",
-    "C-Programming/Notes/Data.md",
-    "C-Programming/Notes/Strings, Characters and Bytes~.md",
-    "C-Programming/Notes/Statements~.md",
-    "C-Programming/Notes/Pointers~.md",
-    "C-Programming/Notes/L-value and R-value~.md",
-    "C-Programming/Notes/Functions~.md",
-    "C-Programming/Notes/Arrays~.md",
-    "C-Programming/Notes/Basic Concepts~.md",
     "CPGE/Physique - Chimie/P06 Optique Ondulatoire/Notes/1TD1.canvas",
     "CPGE/Physique - Chimie/Cours/P06 Optique Ondulatoire/Notes/1TD1.canvas"
   ]

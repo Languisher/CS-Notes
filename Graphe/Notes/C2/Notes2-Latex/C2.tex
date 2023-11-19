@@ -1,0 +1,608 @@
+
+\chapter{Définitions et premières propriétés} % (fold)
+\label{chap: Définitions et premières propriétés}
+
+\section{Groupe} % (fold)
+\label{sec:Groupe}
+
+\begin{Definition}[colbacktitle=red!75!black]{Groupe}{}
+On dit que $(G, \times)$ est un \textbf{groupe} lorsque $G$ est un ensemble non vide et $\times$ une \textit{loi de composition interne} sur $G$ notée $(x,y)\mapsto x \times y$ vérifiant : 
+\begin{itemize}
+
+    \item $\times$ \textit{associative} : 
+      \begin{equation}
+        \forall ( x, y, z) \in G ^{3}, \; (x \times y )\times z = x \times (y \times z) 
+      \end{equation} 
+    \item Existence d'un \textbf{élément neutre} $e \in G$ pour $\times$ : 
+      \begin{equation}
+        \forall x \in  G, \; e \times x = x \times e = x
+      \end{equation}
+
+    \item Tout élément de $G$ possède un inverse pour $\times$ : 
+      \begin{equation}
+        \forall x \in G, \exists y \in G,\; x \times y = y \times x = e
+      \end{equation}
+      on note $x ^{-1} \overset{Not}{=} y$ l'inverse de $x \in G$.
+
+\end{itemize}
+\end{Definition}
+
+\subsection{Groupe abélien} % (fold)
+\label{sub:Groupe abélien}
+
+% subsection Groupe abélien (end)
+\begin{Definition}[colbacktitle=red!75!black]{Groupe abélien ou commutatif}{}
+$(G, \times)$ un groupe est \textbf{commutatif} ou \textbf{abélien} si $x$ est commutative : 
+\begin{equation}
+  \forall (x,y) \in G ^{2}, \; x \times y = y \times x
+\end{equation}
+\end{Definition}
+
+\subsection{Groupe fini et infini} % (fold)
+
+% subsection  (end)
+
+\begin{Definition}[colbacktitle=red!75!black]{Groupe fini, Ordre}{}
+Si $G$ est un ensemble fini, alors on dit $(G, \times)$ est un \textbf{groupe fini}, on note $\mathrm{card}(G)$ l'\textbf{ordre} de $(G, \times)$. Sinon on dit que $(G, \times)$ est d'\textbf{ordre infini}.
+\end{Definition}
+
+
+
+% subsection Groupe (end)
+\subsection{Groupe symétrique} % (fold)
+\label{sub:Groupe symétrique}
+
+% subsection Groupe symétrique (end)
+\begin{Definition}[colbacktitle=red!75!black]{}{}
+  \begin{itemize}
+
+      \item Soit $E$ un ensemble. On note $\mathscr{S}(E)$ l'ensemble des bijections de $E$ dans $E$ qu'on appelle l'ensemble des \textbf{permutations} de $E$.
+
+      \item $(\mathscr{S}(E), \circ)$ est appelé le \textbf{groupe symétrique} de $E$. 
+
+      \item Si $E = [\![1,n ]\!]$ où $n \in \mathbb{N} ^{*}$ alors on note simplement $\mathscr{S}_n$ le groupe symétrique de $[\![1,n]\!]$.  Son \textbf{ordre} est égal à $\mathrm{card}( \mathscr{S}_n) = n!$. 
+
+      \item Pour tout $\psi \in \mathscr{S}_n$, on note 
+\begin{equation}
+  \psi = \begin{pmatrix}
+    1 & 2 & \dots & n \\ 
+    \psi(1) & \psi(2) & \dots & \psi(n)
+  \end{pmatrix}
+\end{equation}
+
+  \end{itemize}
+\end{Definition}
+
+\begin{Example}{}{}
+  Pour $n=3$, il y a 6 permutations de $[\![1, 3]\!]$ : 
+  \begin{equation}
+    \mathrm{id} = \begin{pmatrix}
+      1 & 2 & 3 \\ 1 & 2 & 3
+    \end{pmatrix}, \quad \tau _{1,2} = \begin{pmatrix}
+      1 & 2 & 3 \\ 2 & 1 &3 
+    \end{pmatrix}, \quad \tau _{1,3} = \begin{pmatrix}
+      1 & 2 & 3 \\ 3 & 2 &1 
+    \end{pmatrix}
+  \end{equation}
+  \begin{equation}
+    \tau _{2, 3} = \begin{pmatrix}
+      1 & 2 & 3 \\ 1 & 3 & 2
+    \end{pmatrix}, \quad
+    \sigma_+ = \begin{pmatrix}
+      1 & 2 & 3 \\ 2 & 3 & 1
+    \end{pmatrix}, \quad \sigma_- = \begin{pmatrix}
+      1 & 2 & 3 \\ 3 & 2 & 1
+    \end{pmatrix}
+  \end{equation}
+\end{Example}
+
+
+
+\begin{Example}{}{}
+On peut calculer : 
+\begin{equation}
+\tau _{1,2} \circ \tau _{2,3} = \begin{pmatrix}
+  1 & 2 & 3 \\ 2 & 1 & 3
+\end{pmatrix} \circ \begin{pmatrix}
+  1 & 2 & 3 \\ 1 & 3 & 2
+\end{pmatrix} = \begin{pmatrix}
+  1 & 2 & 3 \\ 2 & 3 & 1
+\end{pmatrix} = \sigma_+
+\end{equation}
+\end{Example}
+
+
+\begin{Prop}{}{}
+Si $n \ge 3$, $(\mathscr{S}_n, \circ)$ n'est pas abélien.
+\end{Prop}
+
+\begin{myproof}{}{}
+  Soient $(a,b,c) \in [\![1,n ]\!] ^{3}$ trois éléments distincts. 
+
+  On considère des permutations $\varphi$ et $\psi$ de $[\![1,n]\!]$, telles que :
+  \begin{equation}
+    \begin{cases}
+        \varphi(a) = b \\ 
+        \varphi(b) = a \\ 
+        \varphi(c) = c
+    \end{cases}, \quad \begin{cases}
+      \psi(a) = c \\ 
+      \psi(b) = b \\ 
+      \psi(c) = a
+    \end{cases}
+  \end{equation} 
+
+  Alors, $(\varphi \circ \psi)(a) = \varphi(\psi(a)) = \varphi(c) = c$ et $(\psi \circ \varphi)(a) = \psi(\varphi(a)) = \psi(b) = b \ne c$ 
+
+  Donc $\varphi \circ \psi \ne \psi \circ \varphi$, donc $\mathscr{S}_n$ n'est pas abélien.
+\end{myproof}
+
+
+
+\begin{Example}{}{}
+Dans $(\mathscr{S}_3, \circ)$, on remarque que 
+\begin{equation}
+  \sigma_+ \circ \tau _{1,2} = \tau _{1,3}, \quad \tau _{1,2} \circ \sigma_+ = \tau _{2,3} \ne \tau _{1,3}
+\end{equation}
+\end{Example}
+
+\textbf{Remarque} : 
+\begin{itemize}
+
+    \item De même $\mathscr{S}(E)$ n'est pas abélien lorsque $E$ est un ensemble infini. 
+
+    \item Le sous-ensemble $\{ \mathrm{id}, \sigma_+ , \sigma_- \}$ a aussi une structure de groupe pour la composition $\circ$ ($\{ \mathrm{id}, \sigma_+, \sigma_-$ est un groupe abélien fini d'ordre 3). Par contre $\{\mathrm{id}, \tau _{1,2}, \tau _{2,3}, \tau _{1,3}\}$ n'a pas de structure de groupe.
+
+        Par exemple, $\tau _{1,2} \circ \tau _{2,3} = \sigma_+$ donc $\circ$ n'est pas un loi de composition interne.
+\end{itemize}
+
+
+\subsection{Sous-groupes} % (fold)
+\label{sub:Sous-groupes}
+
+\begin{Definition}[colbacktitle=red!75!black]{Sous-groupe}{}
+Soit $(G, {*})$ un groupe et $H \subset G$, alors on dit que $H$ est un \textbf{sous-groupe} de $(G, *)$ lorsque 
+\begin{itemize}
+
+  \item $e \in H$ 
+  \item \textit{Stabilité par la loi de composition interne} : 
+    \begin{equation}
+      \label{eq:1}
+      \forall (x, y) \in H, \quad x * y \in H 
+    \end{equation}
+
+  \item \textit{Stabilité par passage au symétrie} : 
+    \begin{equation}
+      \label{eq:2}
+      \forall x \in H, \; \bar{x} \in H
+    \end{equation}
+
+\end{itemize}
+\end{Definition}
+
+\begin{Prop}{}{}
+$H$ est un sous-groupe de $(G,*)$ si et seulement si 
+\begin{itemize}
+
+    \item $e \in H$ 
+    \item $\forall (x, y) \in H$, $x * \bar{y} \in H$
+
+\end{itemize}
+\end{Prop}
+
+\begin{myproof}{}{}
+\begin{itemize}
+
+    \item $(\implies)$ Simple. 
+    \item $(\impliedby)$ Soit $x \in H$, alors $\bar{x} = e * \bar{x} \in H$ car $(e,x) \in H ^{2}$, donc \ref{eq:2} est vérifié.
+      Soit $(x,y) \in H ^{2}$, alors $x * y = x * \bar{\bar{y}} \in H$ car $(x, \bar{y}) \in H ^{2}$, donc \ref{eq:1} est vérifié.
+
+\end{itemize}
+\end{myproof}
+
+\begin{Example}{}{}
+\begin{itemize}
+
+    \item $\mathbb{Z}$ est un sous-groupe de $(\mathbb{Q}, +)$, de $(\mathbb{R}, + )$ et aussi de $(\mathbb{C}, +)$. C'est parce que $\mathbb{Q}$ est un sous-groupe de $(\mathbb{R},+)$ et $\mathbb{R}$ est un sous-groupe de $(\mathbb{C}, +)$. 
+
+    \item Pour tout $n \in \mathbb{N}$, $n \mathbb{Z} = \{ nk, \; k \in \mathbb{Z} \}$ est un sous-groupe de $(\mathbb{Z}, +)$ 
+
+      En particulier, l'ensemble $2 \mathbb{Z}$ des entiers pairs est un sous-groupe de $(\mathbb{Z}, +)$. 
+
+      Mais, l'ensemble $\{2k+1, \; k \in \mathbb{Z}\}$ des entiers impairs n'est pas un sous-groupe de $(\mathbb{Z}, +)$ (car il ne contient pas 0 et il n'est pas stable par addition) 
+
+    \item L'ensemble des fonctions réelles continues sur $I \subset \mathbb{R}$ est un \underline{sous-groupe additif} de l'ensemble ds fonctions réelle définies sur $I$ (car une somme de fonctions continues est continue)
+
+      De même l'ensemble des fonctions dérivables sur $I$ est bien un sous-groupe additif.
+
+      Mais, l'ensemble des fonctions positives sur $I$ n'est pas un sous-groupe additif car il n'est pas stable par passage à l'opposé.
+
+    \item Le sous-ensemble des suites réelles croissantes n'est pas un sous-groupe additif de l'ensemble des suites réelles.
+
+      Mais, le sous-ensemble des suites réelles nulles à partir d'un certain rang est bien un sous-groupe additif.
+
+\end{itemize}
+\end{Example}
+
+\begin{Example}{}{}
+\begin{itemize}
+
+  \item Pour tout $n \in \mathbb{N} ^{*}$, $\mathbb{U}_n = \{z \in \mathbb{C}, \; z ^{n} = 1\}$ est un sous-groupe de $(\mathbb{U} = \{z \in \mathbb{C}, |z| = 1\}, \times)$. Ces deux groupes sont des sous-groupes de $(\mathbb{C} ^{*}, \times)$. 
+
+      De même $\mathbb{R} ^{*}$ et $]0, +\infty[$ sont des \textbf{sous-groupes multiplicatifs} de $\mathbb{C} ^{*}$.
+
+      Mais, $i \mathbb{R} = \{ iy, \; y \in \mathbb{R}\}$ n'est pas un sous-groupe multiplicatif de $\mathbb{C} ^{*}$ (car $1 \not\in i \mathbb{R}$) 
+
+    \item $\{\mathrm{id}, \sigma_+, \sigma_-\}$ est un sous-groupe de $(\mathscr{S}_3, \circ)$
+
+    \item Soit $E$ un ensemble et $A \subset E$. On note $H = \{ \varphi \in \mathscr{S}(E), \; \varphi(A) \subset A \}$ l'ensemble des permutations de $E$ qui laissent $A$ \underline{stable}, alors $H$ est un sous-groupe de groupe symétrique $\mathscr{S}(E)$, en effet : 
+      \begin{itemize}
+
+          \item $\mathrm{id} \in H$  car $\mathrm{id}(A) = A$ 
+          
+          \item Si $\varphi \in H$ alros $\varphi$ est une bijection qui envoie $\varphi(A)$ dans $A$ 
+
+          \item Or $A \subset E$ est un ensemble fini donc $\mathrm{card}(\varphi(A)) = \mathrm{card}(A)$. 
+
+          \item Donc, $\varphi(A) =A$, $\varphi ^{0-1} (A) =A$, donc $H$ est stable par passage à symétrique. (la bijection réciproque de $\varphi$ = le symétrique de $\varphi$ par $0$)
+
+          \item La stabilité de $H$ par composition est immédiate.
+
+      \end{itemize}
+
+\end{itemize}
+
+\end{Example}
+
+
+\textbf{Remarque} : Soit $(G, *)$ un groupe. Alors le plus petit sous-groupe est $\{e\}$ et le plus grand sous-groupe est $G$. Ces deux sous-groupes sont appelés les sous-groupes \textbf{triviaux} de $G$.
+
+
+\begin{Prop}{}{}
+Toute intersection de sous-groupes de $(G, *)$ est un sous-groupe de $(G, *)$. 
+
+C'est en général faux pour l'union. 
+\end{Prop}
+
+\begin{myproof}{Intersection}{}
+Soit $(H_i) _{i \in I}$ des sous-groupes de $(G, *)$, on pose $H = \bigcap _{i \in I} H _i$, alors $\forall i \in I$, $e \in H_i$ car $H_i$ est un sous-groupe donc $e\in H$.
+
+Si $(x,y) \in H ^{2}$, alors $\forall i \in I$, $(x,y) \in H_i ^{2}$ donc $x * \bar{y} \in H_i$ car $H_i$ est un sous-groupe donc $x * \bar{y} \in H$. 
+
+Par conséquent, $H$ est bien un sous-groupe.
+\end{myproof}
+
+\begin{Example}{}{}
+Dans $(\mathbb{Z},+)$, $2 \mathbb{Z} \cap 3 \mathbb{Z} = 6 \mathbb{Z}$ sont les sous-groupes.
+
+Par exemple $2 \mathbb{Z} \cup 3 \mathbb{Z}$ n'est pas un sous-groupe de $(\mathbb{Z}, +)$ car $5 \not \in 2 \mathbb{Z} \cup 3 \mathbb{Z}$
+\end{Example}
+
+\begin{Definition}[colbacktitle=red!75!black]{Sous-groupe engendrée}{}
+Soit $(G, *)$ un groupe et $A \subset G$ alors l'intersection de tous les sous-groupes de $(G, *)$ qui contiennant $A$ est appelées le \textbf{sous-groupe engendrée} par $A$, on le note : 
+\begin{equation}
+  \langle A \rangle = \bigcap _{H \text{ sous-groupe de }(G,*), \; A \subset H} H
+\end{equation}
+\end{Definition}
+
+\begin{Prop}{}{}
+$\langle A \rangle$ est le plus petit sous-groupe qui contient $A$. 
+\end{Prop}
+
+\begin{myproof}{}{}
+\begin{itemize}
+
+    \item $\langle A \rangle$ est bien un sous-groupe comme intersection de sous-groupes. 
+    \item Il est immédiat que $A \subset \langle A \rangle$
+    \item Si $B$ est un sous-groupe qui contient $A$, alors $\langle A \rangle \subset H$ par définition.
+
+\end{itemize}
+\end{myproof}
+
+
+[Manque un cours ici]
+
+
+
+\begin{Definition}[colbacktitle=red!75!black]{Groupe momogène}{}
+Un groupe $(G, *)$ est dit \textbf{monogène} s'il est engendré par un élément : 
+\begin{equation}
+  \exists a \in G, G = \langle \{ a \} \rangle = \{ a ^{*k, \; k \in \mathbb{Z}}\}
+\end{equation}
+
+Autrement dit, $G$ est le groupe itérés de $a$. Dans ce cas, on dit que $a$ est un \textbf{générateur} de $(G, *)$.
+
+
+\end{Definition}
+
+
+\begin{Example}{}{}
+    Pour tout $n \in \mathbb{Z}$, $n \mathbb{Z} = \{ k_n, \; k \in \mathbb{Z}\}$ est un groupe additif homogène. $n$ est $-n$ sont des générateurs de $n \mathbb{Z}$.
+\end{Example}
+
+
+\begin{Theorem}{}{}
+Tout sous-groupe additif de $(\mathbb{Z}, +)$ est monogène, c'est-à-dire de la forme $n \mathbb{Z}$ où $n \in \mathbb{N}$ est unique.
+\end{Theorem}
+
+\begin{myproof}{}{}
+  Soit $H$ un sous-groupe additif de $(\mathbb{Z}, +)$. Si $H = \{0 \}$ alors $H = 0 \mathbb{Z}$, sinon $H \cap \mathbb{N} ^{*} \ne \emptyset$ car $H$ est stable par passage à l'opposé.
+
+  On pose $$n = \min (H \cap \mathbb{N} ^{*})$$. 
+
+  \begin{itemize}
+
+      \item Montrons que $H = n \mathbb{Z}$, on a déjà que $n \mathbb{Z} \subset H$ car $ n \in H$, $H$ est stable par addition et par passage à l'opposé.
+
+  Par l'inclusion réciproque, on fixe $h \in H$. On pose 
+  \begin{equation}
+    k = \max \{ k \in \mathbb{Z}, \; k_n \le h\} = E \left( \frac{h}{n}  \right) \quad ( n \ne 0, \; n \in \mathbb{N} ^{*})
+  \end{equation}
+
+  Donc, $k \le h/n < k+1$ donc $k_n \le h < k_n+n$, donc $ h -k_n \in [\![0, n-1]\!]$. 
+
+  Or $h - k_n \in H$ par stabilité car $h \in H$ et $n \in H$.
+
+  On en déduit que $h - k_n = 0 $ car $\min (H \cap \mathbb{N} ^{*}) = n$ donc $h = kn \in n \mathbb{Z}$. Par conséquent $  H = n \mathbb{Z}$
+
+\item L'unicité est immédiate car $\min ( n \mathbb{Z} \cap \mathbb{N} ^{*}) = n$
+
+  \end{itemize}
+\end{myproof}
+
+\textbf{Remarque} : Les sous-groupes additifs de $\color{red} \mathbb{R}$ ne sont pas tous monogènes. Par exemple $\mathbb{Q}$ n'est pas de la forme $x \mathbb{Z}$ où $x \in \mathbb{R}$
+
+En effet, le complémentaire de $n \mathbb{Z}$  contient des intervalles (par exemple $]0, |n|[  \cap n \mathbb{Z} = \emptyset$ si $n \ne 0 $) alors que $\mathbb{Q}$ est \underline{dense} dans $\mathbb{R}$ : 
+\begin{equation}
+  \forall a < b, \; ]a, b[ \cap \mathbb{Q} \ne \emptyset
+\end{equation}
+
+\begin{Theorem}{}{}
+Tout sous-groupe additif de $(\mathbb{R}, +)$ est de l'un des deux types suivants : 
+\begin{itemize}
+
+    \item Monogène, c'est-à-dire de la forme $x \mathbb{Z}$ où $x \in \mathbb{R}_+$ est unique
+
+    \item Dense dans $\mathbb{R}$, c'est-à-dire qu'il intersectetout intervalle de $\mathbb{R}$ (aussi petit qu'on veut)
+\end{itemize}
+\end{Theorem}
+
+\begin{myproof}{}{}
+  Soit $H$un sous-groupe de $(\mathbb{R}, +)$. Si $H = \{0\}$ alors $H = 0 \mathbb{Z}$. Sinon $H \cap \mathbb{R}_+ ^{*} \ne \emptyset$ (car $H$ est stable par passage à l' opposé) 
+
+  On pose 
+  \begin{equation}
+    x = \inf (H \cap \mathbb{R}_+ ^{*})
+  \end{equation}
+
+  Il y a deux cas selon que l'$\inf$ est atteint ou non. 
+
+  \begin{enumerate}
+
+    \item $x > 0 $ donc $ x = \min ( H \cap \mathbb{R}_+ ^{*})$. On peut montrer que $H = x \mathbb{Z}$ en raisonment comme dans la démonstration de sous-groupes de $(\mathbb{Z}, + )$ de même pour l'unicité.
+
+    \item $x = 0 $ Donc il existe une suite $(h_n) _{n \in \mathbb{N}}$ telle que : 
+      \begin{itemize}
+
+          \item $\forall n \in \mathbb{N}$, $h_n \in H \cap \mathbb{R}_+ ^{*}$ 
+          \item $\forall n \in \mathbb{N}$, $0 < h _{n+1} < h_n$ (strictement décroissante) 
+          \item $h_n  \underset{n \to + \infty}{\longrightarrow} 0$
+      \end{itemize}
+
+      Montrons que $H$ est dense dans $\mathbb{R}$, donc qu'il intersecte tout intervalle de $\mathbb{R}$. Soit $]a, b[ \subset \mathbb{R}$, montrons $H \cap ]a, b[ \ne \emptyset$. 
+
+      On sait que $\exists n \in \mathbb{N}$, $0< h_n < b-a$. On pose 
+      \begin{equation}
+        j = \max \{ k \in \mathbb{Z}, \; kh_n \le a\} = E \left( \frac{a}{h_n}  \right)
+      \end{equation}
+
+      Alors $a - kh_n \in [0, h_n[$. 
+
+      \begin{equation}
+        k h_n \le a < kh_n + h_n < kh_n + b-a \le b
+      \end{equation}
+
+      Donc, $(k+1) h_n \in ]a,b[$ et $(k+1) h_n \in H$ car $h_n \in H$ et par stabilité de $H$. 
+
+      Par conséquent $]a,b[ \cap H \ne \emptyset$, on en déduit que $H$ est dense dans $\mathbb{R}$.
+  \end{enumerate}
+\end{myproof}
+
+\begin{Example}{}{}
+Soit $x \in \mathbb{R}$, alors il existe deux suites $(a_n) _{n \in \mathbb{N}} \in \mathbb{Z} ^{\mathbb{N}}$ et $(b_n) _{n \in \mathbb{N}} \in \mathbb{Z} ^{\mathbb{N}}$ telles que 
+\begin{equation}
+  x = \underset{n \to + \infty}{\lim} a_n+ b_n \sqrt{2}
+\end{equation}
+
+car $\mathbb{Z}[ \sqrt{2} ] = \{ a+b \sqrt{2}, \; (a,b) \in \mathbb{Z} ^{2} \}$ l'anneaux des entiers de Gauss.
+
+
+En effet, $(\mathbb{Z}[\sqrt{2}, +)$ est le sous-groupe de $(\mathbb{R}, +)$ engendré par 1 et $\sqrt{2}$, s'il $\mathbb{Z}[ \sqrt{2}]$ est de la forme $y \mathbb{Z}$ où $y \in \mathbb{R}_+$ alors 
+\begin{equation}
+  \exists (k_1, k_2) \in \mathbb{Z} ^{2}, \; 1 = k_1y, \; \sqrt{2} = k_2 y
+\end{equation}
+
+Donc, 
+\begin{equation}
+  \sqrt{2} = \frac{k_2}{k_1}  \in \mathbb{Q}
+\end{equation}
+
+ce qui est absurde. Donc $\mathbb{Z}[ \sqrt{
+  2
+}]$ est danse dans $R$.
+\end{Example}
+
+
+\begin{Definition}[colbacktitle=red!75!black]{Groupe cyclique}{}
+Soit $(G, *)$ un groupe. 
+\begin{itemize}
+
+    \item On dit que $G$ est \textbf{cyclique} si $G$ est monogène est fini 
+    \item Soit $a \in G$, si $\langle \{a\} \rangle$ est fini (donc cyclique) alors son ordre $| \langle \{a\} \rangle|$ est appelé l'\textbf{ordre} de $a$ dans $(G, *)$.
+
+      Sinon $a$ est dit d'\textbf{ordre infini}.
+
+\end{itemize}
+
+\end{Definition}
+
+\begin{Prop}{}{}
+Soient $(G, *)$ un groupe et $x \in G$. Si $a$ est d'ordre fini alors son ordre est égal à 
+\begin{equation}
+  \min \{ n\in \mathbb{N}, \; a ^{*n} = e\}
+\end{equation}
+\end{Prop}
+
+\begin{myproof}{}{}
+  Puisque $\langle \{a\} \rangle = \{ a ^{*k}, k \in \mathbb{Z} \}$  est fini, on sait que 
+  \begin{equation}
+    \exists (k_1, k_2) \in \mathbb{Z} ^{2}, \; a ^{* k_1} = a ^{*k_2}, \; k_1 \ne k_2
+  \end{equation}
+
+  On peut supposer que $k_1 \subset k_2$, alors $a ^{*(k_2 -k_1)} = a ^{*k_2} \times \overline{a ^{*k_2}} = e$ et $k_2 - k_1 \in \mathbb{N} ^{*}$
+
+  Donc $\{ n\in \mathbb{N} ^{*}, \; a ^{*n} = e\} \ne \emptyset$ , donc $n = \min\{ n \in \mathbb{N} ^{*}, \; n ^{*n} = e\}$ existe.
+
+  Montrons que $\langle \{ a\} \rangle = \{a ^{*k}, \; k \in [\![0, n-1]\!]\}$. 
+
+  \begin{itemize}
+
+      \item  L'inclusion inverse est évidente. 
+      \item Pour l'inclusion, onfixe $k \in \mathbb{Z}$, on pose $l = \max \{l \in \mathbb{Z}, \; l n \le k \} = E \left( \frac{k}{n}  \right)$ donc $k = l n \in [\![0, n-1]\!]$
+
+        Et $a ^{*k} = a ^{*(j-ln)} * (a ^{*n}) ^{*l = a ^{*(j- l n)}}$. 
+
+        Donc l'ordre de $a$ est égal à 
+        \begin{equation}
+          | \langle \{a\} \rangle | = \mathrm{card} \{ a ^{*k},\; k \in [\![0, n-1]\!]\} = n
+        \end{equation}
+        car $n = \min \{n \in \mathbb{N} ^{*}, \; a ^{*n = e\}}$ donc $\forall (k_1, k_2) \in [\![0, n-1]\!] ^{2}, \; k_1 \ne k_2 \implies a ^{*k_1} \ne a ^{*k_2}$
+  \end{itemize}
+\end{myproof}
+
+
+\begin{Example}{}{}
+Soit $n \in \mathbb{N}$, alors 
+\begin{equation}
+  \mathbb{U}_n = \{ e ^{i \frac{2k \pi}{n} }, \; k \in [\![0, n-1]\!]\}
+\end{equation}
+
+donc $(\mathbb{U}_n , \times)$ est cyclique et $\omega = e ^{\frac{2i \pi}{n} }$ est d'ordre $n$, qui est un générateur de $\mathbb{U}_n$
+\end{Example}
+
+\section{Morphismes de groupes} % (fold)
+\label{sec:Morphismes de groupes}
+
+\begin{Definition}[colbacktitle=red!75!black]{Homomorphisme}{}
+Soit $(G, *)$ et $(H, .)$ deux groupes. Un \textbf{homomorphisme} de $(G, *)$ vers $(H, .)$ est une application $f: G \to H$ telle que 
+\begin{equation}
+  \forall (x, y) \in G ^{2}, \; f(x *y) = f(x) . f(y)
+\end{equation}
+\end{Definition}
+
+\begin{Prop}{}{}
+  Si $f : (G, *) \to (H, .)$ est un \textbf{homomorphisme} de groupes alors : 
+  \begin{itemize}
+
+      \item $f(e_G) =f(e_H)$ 
+      \item $\forall x \in G$, $f( \overline{x}) = \overline{f(x)} \quad (n=-1)$ 
+      \item $\forall x \in G$, $n \in \mathbb{Z}$, $f (x ^{*n}) = (f(x)) ^{.n}$
+  \end{itemize}
+\end{Prop}
+
+\begin{myproof}{}{}
+\begin{itemize}
+
+    \item On a $f(e_G) = f(e_G * e_G) = f(e_G) . f(e_G)$ 
+    \item Soit $x \in G$, on a : 
+      \begin{equation}
+        f(x) . f(\overline{x}) = f(x * \overline{x}) = f(e_G) = e_H
+      \end{equation}
+    \item De même $f(\overline{x}) . f(x) = e_H$.
+
+    \item Récurrence
+
+\end{itemize}
+
+
+
+\end{myproof}
+
+\begin{Example}{}{}
+\begin{itemize}
+
+    \item Soit $n \in \mathbb{R}$, alors $x \mapsto ax$ est un homomorphisme du groupe $(\mathbb{R}, +)$ vers lui-même. 
+
+    \item $x \mapsto \ln x$ est un homomorphisme du groupe $(\mathbb{R}_+ ^{*}, \times)$ vers $(\mathbb{R}, +)$
+
+    \item $x \mapsto e ^{i \theta}$ est un homomorphisme de groupe $(\mathbb{R}, +)$ vers le groupe $(\mathbb{C} ^{*}, \times)$ au $(\mathbb{U}, \times)$
+
+\end{itemize}
+\end{Example}
+
+\begin{Example}{}{}
+L'application qui associe à chaque suitre convergente sa limite est un homomorphisme additif.
+\end{Example}
+
+\begin{Example}{}
+    La transposée des matrices de $(\mathrm{M}_n (\mathbb{K})$ est un homomorphisme additif.
+
+
+    Le déterminant des matrice de $\mathrm{GL}_n( \mathbb{K})$ est un homomorphisme multiplicatif.
+
+\end{Example}
+
+
+
+
+
+
+
+
+
+
+% section Morphismes de groupes (end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% subsection Sous-groupes (end)
+
+
+
+
+
+
+
+
+
+
+
+
+% section Définitions et premières propriétés (end)
+% chapter Théorie des groupes (end)
